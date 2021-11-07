@@ -1,0 +1,55 @@
+.estilosFormulario
+{
+    margin: 30px ;
+    width: 95%;
+}
+
+
+
+.titulosTabla
+{
+    border: 1px solid black;
+}
+
+.titulosTabla th
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.cuerpoTabla
+{
+    border: 1px solid black;
+    
+}
+
+.cuerpoTabla td
+{
+    border: 1px solid black;
+    width: 150px;
+    text-align: center;
+}
+
+.botnTablaGranu
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botnTablaGranu button
+{
+    width: 200px;
+}
+
+.inputTablaGprimario
+{
+    width: 150px;
+    border: none;
+}
+
+.gridBotoncetess
+{
+    display: grid;
+    grid-template-columns: 45% 45%
+}

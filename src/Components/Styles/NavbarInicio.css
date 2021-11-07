@@ -1,0 +1,35 @@
+
+
+.navInicio
+{   
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.navInicio ul
+{
+    display: flex;
+    justify-content: flex-end; 
+    
+}
+
+.navInicio ul li
+{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.navInicio ul li a
+{
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.navInicio ul li a:hover
+{
+    color: blue;
+}
