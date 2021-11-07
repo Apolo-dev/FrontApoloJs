@@ -3,8 +3,18 @@ import './Styles/BadgeCaja.css'
 
 const BadgeCaja = () => {
     return (
-        <div className="cajaGeneral">
-            caja 111
+        <div className="GridcajaGeneral">
+            <div className="gridDatosCajas">
+                <div>
+                    chancador
+                </div>
+                <div>
+                    velocidad
+                </div>
+            </div>
+            <div className="ImagenDatosCaja">
+                imagen
+            </div>
         </div>
     )
 }

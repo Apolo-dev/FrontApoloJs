@@ -1,7 +1,22 @@
 
-.cajaGeneral
+.GridcajaGeneral
 {
-    width: 90%;
-    height: 90%;
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    
 
+}
+
+.gridDatosCajas
+{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.ImagenDatosCaja
+{
+    width: 100%;
+    height: 100%;
 }

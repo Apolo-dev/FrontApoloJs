@@ -5,6 +5,14 @@ import './Styles/CuerpoReportes.css'
 const CuerpoReportes = () => {
     return (
         <div className="gridReportes">
+            <div className="gridFiltrosReportes">
+                <div>
+                    asa
+                </div>
+                <div>
+                    calendario
+                </div>
+            </div>
             <div className="gridCajasReportes">
                 <div>
                     <BadgeCaja />
