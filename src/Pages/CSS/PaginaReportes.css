@@ -6,3 +6,8 @@
     grid-template-rows: 60px 690px;
 }
 
+.gridTablaRespuesta
+{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}

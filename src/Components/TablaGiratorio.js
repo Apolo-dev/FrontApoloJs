@@ -1,10 +1,12 @@
 import React from 'react'
 import './Styles/TablaGiratorio.css'
 
-const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
+const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, retenido1, retenido2}) => {
+
+
     return (
         <div className="GenerralTablaGiratorio">
-            <form onSubmit={handleSubmit} className="estilosFormulario">
+            <form  className="estilosFormulario">
                 <table>
                     <tr className="titulosTabla">
                         <th>
@@ -14,7 +16,7 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                             Abertura(micras)
                         </th>
                         <th>
-                            Peso Retenido (%)
+                            Peso Retenido (g)
                         </th>
                         <th>
                             Retenido (%)
@@ -27,9 +29,10 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         </th>
                         
                     </tr>
+                    
                     <tr className="cuerpoTabla">
-                        <td>1,06</td>
-                        <td>17960</td>
+                        <td>3/8</td>
+                        <td>9500</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -38,13 +41,14 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                                 name = "v1"
                                 />
                         </td>
+                        <td>{retenido1}</td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>1/2</td>
-                        <td>12700</td>
+                        <td>3</td>
+                        <td>6700</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -53,14 +57,14 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                                 name = "v2"
                                 />
                         </td>
-                        <td></td>
+                        <td>{retenido2}</td>
                         <td></td>
                         <td></td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>3/8</td>
-                        <td>9500</td>
+                        <td>4</td>
+                        <td>4750</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -75,8 +79,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>3</td>
-                        <td>6700</td>
+                        <td>6</td>
+                        <td>3350</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -91,8 +95,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>4</td>
-                        <td>4750</td>
+                        <td>8</td>
+                        <td>2360</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -107,8 +111,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>6</td>
-                        <td>3350</td>
+                        <td>10</td>
+                        <td>1700</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -123,8 +127,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>8</td>
-                        <td>2360</td>
+                        <td>14</td>
+                        <td>1180</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -139,8 +143,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>10</td>
-                        <td>1700</td>
+                        <td>20</td>
+                        <td>850</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -155,8 +159,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>14</td>
-                        <td>1180</td>
+                        <td>28</td>
+                        <td>600</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -171,8 +175,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>20</td>
-                        <td>850</td>
+                        <td>35</td>
+                        <td>425</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -187,8 +191,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>28</td>
-                        <td>600</td>
+                        <td>48</td>
+                        <td>300</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -203,8 +207,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>35</td>
-                        <td>425</td>
+                        <td>65</td>
+                        <td>212</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -219,8 +223,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>48</td>
-                        <td>300</td>
+                        <td>100</td>
+                        <td>150</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -235,8 +239,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>65</td>
-                        <td>212</td>
+                        <td>150</td>
+                        <td>106</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -251,8 +255,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>100</td>
-                        <td>150</td>
+                        <td>200</td>
+                        <td>75</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -267,8 +271,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>150</td>
-                        <td>106</td>
+                        <td>270</td>
+                        <td>53</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -283,8 +287,8 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         
                     </tr>
                     <tr className="cuerpoTabla">
-                        <td>200</td>
-                        <td>75</td>
+                        <td>-270</td>
+                        <td>Bandeja</td>
                         <td><input 
                                 type="number" 
                                 onChange={handleChange} 
@@ -297,45 +301,25 @@ const TablaGiratorio = ({handleChange, handleSubmit, peso}) => {
                         <td></td>
                         <td></td>
                         
-                    </tr>
+                    </tr >
                     <tr className="cuerpoTabla">
-                        <td>270</td>
-                        <td>53</td>
-                        <td><input 
-                                type="number" 
-                                onChange={handleChange} 
-                                className="inputTablaGprimario"
-                                value={peso.v18}
-                                name = "v18"
-                                />
-                        </td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        
-                    </tr>
-                    <tr className="cuerpoTabla">
-                        <td>-270</td>
-                        <td>Bandeja</td>
-                        <td><input 
-                                type="number" 
-                                onChange={handleChange} 
-                                className="inputTablaGprimario"
-                                value={peso.v19}
-                                name = "v19"
-                                />
-                        </td>
+                        <td>Total</td>
+                        <td>{sumatoria}</td>
                         <td></td>
                         <td></td>
                         <td></td>
                         
                     </tr >
+                    
                 </table>
-                <div className="botnTablaGranu">
-                        <button className="btn btn-danger">
-                            Guardar
+                <div className="botnTablaCalcular" onClick = {handleClickSumatoria}>
+                        <button>
+                            Calcular
                         </button>
                     </div>
+                
+                
             </form>
             
         </div>
