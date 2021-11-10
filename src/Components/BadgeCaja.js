@@ -1,19 +1,19 @@
 import React from 'react'
 import './Styles/BadgeCaja.css'
 
-const BadgeCaja = () => {
+const BadgeCaja = ({nombre,dato, imagen}) => {
     return (
         <div className="GridcajaGeneral">
             <div className="gridDatosCajas">
                 <div>
-                    chancador
+                    {nombre}
                 </div>
                 <div>
-                    velocidad
+                    {dato}
                 </div>
             </div>
             <div className="ImagenDatosCaja">
-                imagen
+                <img src={imagen} alt="finanzas" />
             </div>
         </div>
     )

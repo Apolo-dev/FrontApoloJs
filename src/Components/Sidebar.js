@@ -6,7 +6,7 @@ const Sidebar = () => {
     return (
         <div className="listasSidebar">
             <h5 className="tituloGenerald">Apolo Minning</h5>
-            <ul className="grupoRecursos">
+            <ul >
                 <li><Link to="/reportes">Reportes</Link></li>
                 <li><Link to="/lab">Laboratorio</Link></li>
                 <li><Link to="/form">formulario</Link></li>

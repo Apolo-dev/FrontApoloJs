@@ -14,24 +14,24 @@
 
 .titulosTabla
 {
-    border: 1px solid black;
+    border: 1px solid rgb(221, 221, 221)
 }
 
 .titulosTabla th
 {
-    border: 1px solid black;
+    border: 1px solid rgb(221, 221, 221);
     text-align: center;
 }
 
 .cuerpoTabla
 {
-    border: 1px solid black;
+    border: 1px solid rgb(221, 221, 221);
     
 }
 
 .cuerpoTabla td
 {
-    border: 1px solid black;
+    border: 1px solid rgb(221, 221, 221);
     width: 150px;
     text-align: center;
 }

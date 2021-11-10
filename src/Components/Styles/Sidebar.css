@@ -35,18 +35,16 @@
 {
     color: white;
     text-decoration: none;
+    padding: 10px;
     
 }
 
 .listasSidebar ul li a:hover
 {
     color: blue;
+
 }
 
-.grupoRecursos
-{
-    margin-top: 20px;
-}
 
 .tituloGenerald
 {
