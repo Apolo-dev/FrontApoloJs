@@ -1,9 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './CSS/PaginaReportes.css'
 import Navbar from '../Components/Navbar'
 import Sidebar from '../Components/Sidebar'
 import Logo from './../Images/logito.png'
 import TablaGiratorio from '../Components/TablaGiratorio'
+import TablaRespuestaLab from '../Components/TablaRespuestaLab'
+
+const ApiUrl = 'http://127.0.0.1:8000/api/pesos/'
 
 const PaginaLab = () => {
 
@@ -12,6 +15,35 @@ const PaginaLab = () => {
     const [peso, setPeso] = useState(initialState)
     const [sumatoria, setSumatoria] = useState('')
     //const [retenido, setRetenido] = useState('')
+
+    const [datos, setDatos] = useState([])
+
+    // hacer el fetch
+
+    const getPesos = async ()=>
+    {
+        try
+        {
+            const res = await fetch(ApiUrl)
+            const data = await res.json()
+            console.log(data);
+            setDatos(data)
+        }catch(error)
+        {
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>
+    {
+        console.log(getPesos());
+    }, [])
+
+
+
+    
+
+
 
 
     const handleChange = (e)=>
@@ -39,8 +71,14 @@ const PaginaLab = () => {
 
     const suma = peso1 + peso2 + peso3 + peso4 + peso5 + peso6 + peso7 + peso8 + peso9 + peso10 + peso11 + peso12 + peso13 + peso14 + peso15 + peso16 + peso17
 
-    const retenido1 =((peso1*100)/suma).toFixed(2)
-    const retenido2 = (peso2*100)/suma.toFixed(2)
+    
+
+    
+    
+
+    
+
+    
 
 
 
@@ -48,8 +86,7 @@ const PaginaLab = () => {
     const handleClickSumatoria = (e)=>
     {
         e.preventDefault()
-        console.log('oliss');
-        console.log(suma);
+        //console.log(ret);
         setSumatoria(suma)
     }
 
@@ -75,16 +112,15 @@ const PaginaLab = () => {
                     peso={peso}
                     sumatoria = {sumatoria}
                     handleClickSumatoria = {handleClickSumatoria}
-                    retenido1 = {retenido1}
-                    retenido2 = {retenido2}
+                    datos={datos}
+                    
                     
                     
                     />
                 </div>
                 <div>
-                    respuesta
+                    <TablaRespuestaLab />
                 </div>
-
             </div>
             
         </div>

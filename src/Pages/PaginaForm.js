@@ -41,6 +41,25 @@ const PaginaForm = () => {
         }
     }
 
+    // para tabla pruebas 
+
+    const algo = [
+        {
+            equipo: 'River',
+            pais: 'Argentina',
+            copas: 30
+        },
+        {
+            equipo: 'Sao Paulo',
+            pais: 'Brasil',
+            copas: 88
+        },
+
+    ]
+    
+
+
+
 
 
     return (
@@ -66,8 +85,33 @@ const PaginaForm = () => {
                     
                     />
                 </div>
-                <div>
-                    ssd
+                <div className ="tablaejemplosd">
+                    <table>
+                        <tr>
+                            <th>Equipo</th>
+                            <th>Pais</th>
+                            <th>Copas</th>
+                        </tr>
+                        <tr>
+                            {algo.map((element)=>
+                            {
+                                return <tr>
+                                        <tr>
+                                            <td>
+                                                {element.equipo}
+                                            </td>
+                                            <td>
+                                                {element.pais}
+                                            </td>
+                                            <td>
+                                                {element.copas}
+                                            </td>
+                                        </tr> 
+                                    </tr>
+                            })}
+                        </tr>
+                        
+                    </table>
                 </div>
             </div>
         </div>

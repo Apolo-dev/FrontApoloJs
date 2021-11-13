@@ -4,3 +4,8 @@
     display: grid;
     grid-template-columns: 45% 45%;
 }
+
+.tablaejemplosd table tr td
+{
+    border: 1px solid black;
+}

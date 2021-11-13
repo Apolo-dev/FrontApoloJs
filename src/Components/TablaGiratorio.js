@@ -1,8 +1,9 @@
 import React from 'react'
 import './Styles/TablaGiratorio.css'
 
-const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, retenido1, retenido2}) => {
+const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, datos}) => {
 
+    console.log(datos[0].peso1);
 
     return (
         <div className="GenerralTablaGiratorio">
@@ -41,7 +42,7 @@ const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, re
                                 name = "v1"
                                 />
                         </td>
-                        <td>{retenido1}</td>
+                        <td>{datos[0].peso1}</td>
                         <td></td>
                         <td></td>
                         
@@ -57,7 +58,7 @@ const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, re
                                 name = "v2"
                                 />
                         </td>
-                        <td>{retenido2}</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         
@@ -317,9 +318,7 @@ const TablaGiratorio = ({handleChange, peso, sumatoria, handleClickSumatoria, re
                         <button>
                             Calcular
                         </button>
-                    </div>
-                
-                
+                </div>
             </form>
             
         </div>
