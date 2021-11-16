@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './CSS/PaginaReportes.css'
 import './CSS/PaginaForm.css'
 import Navbar from '../Components/Navbar'
@@ -10,9 +10,7 @@ import Form from '../Components/Form'
 const PaginaForm = () => {
 
 
-    const [wi, setWi] = useState('')
-    const [p80, setP80] = useState('')
-    const [f80, setF80] = useState('')
+   
 
 
     const handleSubmit = (e)=>
@@ -78,9 +76,7 @@ const PaginaForm = () => {
                     <Form 
                     handleSumbit={handleSubmit}
                     handleChange={handleChange}
-                    wi={wi}
-                    p80={p80}
-                    f80={f80}
+                    
                     
                     
                     />

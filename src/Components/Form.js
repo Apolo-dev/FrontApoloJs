@@ -1,7 +1,7 @@
 import React from 'react'
 import './Styles/Form.css'
 
-const Form = ({handleSubmit, handleChange, wi, p80, f80}) => {
+const Form = ({handleSubmit, handleChange}) => {
     return (
         <div className="card contenido">
             <div className="card-header titulillo">

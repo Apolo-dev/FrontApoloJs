@@ -15,7 +15,7 @@ const CuerpoReportes = () => {
     const wi = 10
     const res = ((10*wi)*((1/Math.sqrt(p80))-(1/Math.sqrt(f80))))
     const potencia = res.toFixed(2)
-    console.log(potencia);
+    //console.log(potencia);
 
 
 

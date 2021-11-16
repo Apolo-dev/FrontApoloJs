@@ -35,14 +35,12 @@
 {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    
+    padding: 0px 10px;
 }
 
 .listasSidebar ul li a:hover
 {
     color: blue;
-
 }
 
 
