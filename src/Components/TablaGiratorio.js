@@ -3,6 +3,8 @@ import './Styles/TablaGiratorio.css'
 
 const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
 
+    // para el % retenido
+
     const rete1 = ((peso.v1*100)/sumatoria).toFixed(2)
     const rete2 = ((peso.v2*100)/sumatoria).toFixed(2)
     const rete3 = ((peso.v3*100)/sumatoria).toFixed(2)
@@ -20,6 +22,10 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
     const rete15 = ((peso.v15*100)/sumatoria).toFixed(2)
     const rete16 = ((peso.v16*100)/sumatoria).toFixed(2)
     const rete17 = ((peso.v17*100)/sumatoria).toFixed(2)
+
+
+
+    // para el % retenido acumulado 
 
 
     const acumu1 = ((peso.v1*100)/sumatoria).toFixed(2)
@@ -50,7 +56,55 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
     const acumu17 = (((peso.v1 + peso.v2 + peso.v3 + peso.v4 + peso.v5 + peso.v6 + peso.v7 + peso.v8 + peso.v9 + peso.v10 + peso.v11 + peso.v12 + peso.v13 + peso.v14 + peso.v15 + peso.v16 + peso.v17)*100)/sumatoria).toFixed(2)
 
 
+    // para % pasante
 
+    
+
+    const pas1 = (100-acumu1)
+    const pas2 = (100-acumu2)
+    const pas3 = (100-acumu3)
+    const pas4 = (100-acumu4)
+
+    const pas5 = (100-acumu5)
+    const pas6 = (100-acumu6)
+    const pas7 = (100-acumu7)
+    const pas8 = (100-acumu8)
+
+    const pas9 = (100-acumu9)
+    const pas10 = (100-acumu10)
+    const pas11 = (100-acumu11)
+    const pas12 = (100-acumu12)
+
+    const pas13 = (100-acumu13)
+    const pas14 = (100-acumu14)
+    const pas15 = (100-acumu15)
+    const pas16 = (100-acumu16)
+
+    const pasantes = [pas1, pas2, pas3, pas4, pas5, pas6, pas7, pas8, pas9, pas10, pas11, pas12, pas13, pas14, pas15, pas16]
+    //console.log(pasantes);
+
+    const mayora80 = pasantes.filter((element)=>
+    {
+        return element > 80 && element <90
+    })
+
+
+    console.log(mayora80);
+
+    const menora80 = pasantes.filter((element)=>
+    {
+        return element > 70 && element < 80
+    })
+
+    console.log(menora80);
+
+    // enlasar abertura y pasante
+
+    
+
+    // calcular el p80
+
+  
 
 
     return (
@@ -92,7 +146,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete1}</td>
                         <td>{acumu1}</td>
-                        <td>{(100-acumu1).toFixed(2)}</td>
+                        <td>{pas1.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -108,7 +162,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete2}</td>
                         <td>{acumu2}</td>
-                        <td>{(100-acumu2).toFixed(2)}</td>
+                        <td>{pas2.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -124,7 +178,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete3}</td>
                         <td>{acumu3}</td>
-                        <td>{(100-acumu3).toFixed(2)}</td>
+                        <td>{pas3.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -140,7 +194,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete4}</td>
                         <td>{acumu4}</td>
-                        <td>{(100-acumu4).toFixed(2)}</td>
+                        <td>{pas4.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -156,7 +210,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete5}</td>
                         <td>{acumu5}</td>
-                        <td>{(100-acumu5).toFixed(2)}</td>
+                        <td>{pas5.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -172,7 +226,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete6}</td>
                         <td>{acumu6}</td>
-                        <td>{(100-acumu6).toFixed(2)}</td>
+                        <td>{pas6.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -188,7 +242,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete7}</td>
                         <td>{acumu7}</td>
-                        <td>{(100-acumu7).toFixed(2)}</td>
+                        <td>{pas7.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -204,7 +258,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete8}</td>
                         <td>{acumu8}</td>
-                        <td>{(100-acumu8).toFixed(2)}</td>
+                        <td>{pas8.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -220,7 +274,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete9}</td>
                         <td>{acumu9}</td>
-                        <td>{(100-acumu9).toFixed(2)}</td>
+                        <td>{pas9.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -236,7 +290,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete10}</td>
                         <td>{acumu10}</td>
-                        <td>{(100-acumu10).toFixed(2)}</td>
+                        <td>{pas10.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -252,7 +306,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete11}</td>
                         <td>{acumu11}</td>
-                        <td>{(100-acumu11).toFixed(2)}</td>
+                        <td>{pas11.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -268,7 +322,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete12}</td>
                         <td>{acumu12}</td>
-                        <td>{(100-acumu12).toFixed(2)}</td>
+                        <td>{pas12.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -284,7 +338,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete13}</td>
                         <td>{acumu13}</td>
-                        <td>{(100-acumu13).toFixed(2)}</td>
+                        <td>{pas13.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -300,7 +354,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete14}</td>
                         <td>{acumu14}</td>
-                        <td>{(100-acumu14).toFixed(2)}</td>
+                        <td>{pas14.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -316,7 +370,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete15}</td>
                         <td>{acumu15}</td>
-                        <td>{(100-acumu15).toFixed(2)}</td>
+                        <td>{pas15.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -332,7 +386,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                         </td>
                         <td>{rete16}</td>
                         <td>{acumu16}</td>
-                        <td>{(100-acumu16).toFixed(2)}</td>
+                        <td>{pas16.toFixed(2)}</td>
                         
                     </tr>
                     <tr className="cuerpoTabla">
@@ -354,7 +408,7 @@ const TablaGiratorio = ({handleChange, peso, handleSubmit, sumatoria}) => {
                     <tr className="cuerpoTabla">
                         <td></td>
                         <td>Total</td>
-                        <td>{sumatoria}</td>
+                        <td><strong>{sumatoria}</strong></td>
                         <td></td>
                         <td></td>
                         <td></td>
