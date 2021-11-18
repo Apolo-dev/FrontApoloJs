@@ -8,7 +8,7 @@ import imgwi from '../Images/imagenwiultima.png'
 import imgpotencia from '../Images/imgpotencia.png'
 import Grafico from './Grafico'
 
-const CuerpoReportes = () => {
+const CuerpoReportes = ({datosPesos, datosAbertura}) => {
 
     const p80 = 150
     const f80 = 500
@@ -17,14 +17,21 @@ const CuerpoReportes = () => {
     const potencia = res.toFixed(2)
     //console.log(potencia);
 
+    console.log(datosPesos);
 
+    console.log(datosAbertura);
+
+    //const resul = datosPesos[0].peso1 + datosAbertura[0].abertura1
+    //console.log(resul);
 
 
     return (
         <div className="gridReportes">
             <div className="gridFiltrosReportes">
                 <div>
-                    asa
+                    <button className="botonDatos" >
+                        Datos
+                    </button>
                 </div>
                 <div className="calendario">
                     <label htmlFor="">Filtra por fecha: </label>
@@ -37,6 +44,7 @@ const CuerpoReportes = () => {
                     nombre = 'P80(micras)'
                     dato = {p80}
                     imagen = {imagenp80}
+                    //resultado = {resultado}
                     
                     />
                 </div>
