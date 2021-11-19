@@ -6,24 +6,24 @@ import Logo from './../Images/logito.png'
 import CuerpoReportes from '../Components/CuerpoReportes'
 
 const apiPesos = 'http://127.0.0.1:8000/api/pesos/'
-const apiAberturas = 'http://127.0.0.1:8000/api/aberturas/'
+
 
 
 const PaginaReporte = () => {
 
     const [datosPesos, setDatosPesos] = useState([])
-    const [datosAbertura, setDatosAbertura] = useState([])
+
+    // estado para fecha 
+
+    const [fecha, setFecha] = useState(new Date())
 
     const getpesos = async ()=>
     {
         try
         {
             const res = await fetch(apiPesos)
-            const res2 = await fetch(apiAberturas)
             const data = await res.json()
-            const data2 = await res2.json()
-            setDatosPesos(data)
-            setDatosAbertura(data2)
+            setDatosPesos(data)    
         }catch(error)
         {
             console.log(error);
@@ -33,10 +33,7 @@ const PaginaReporte = () => {
     useEffect(()=>
     {
         return getpesos()
-    }, [])
-
-    
-
+    }, [fecha])
     
 
 
@@ -51,11 +48,11 @@ const PaginaReporte = () => {
             <>
                 <Sidebar />
             </>
-            <div>
+            <div className="generalCuerpoRepors">
                 <CuerpoReportes
-                //getPesos={getPesos()}
+                fecha={fecha}
+                setFecha={setFecha}
                 datosPesos={datosPesos}
-                datosAbertura={datosAbertura}
                 />
             </div>
         </div>

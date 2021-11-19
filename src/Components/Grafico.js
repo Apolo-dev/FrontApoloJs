@@ -4,7 +4,7 @@ import './Styles/Grafico.css'
 const Grafico = () => {
     return (
         <div className="contenedorGrafico">
-            grafico papi
+            <h6>Chancado VS Molienda</h6>
         </div>
     )
 }

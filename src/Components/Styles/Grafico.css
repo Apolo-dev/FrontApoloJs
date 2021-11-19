@@ -2,9 +2,16 @@
 .contenedorGrafico
 {
     border: 1px solid rgb(235, 235, 235);
-    width: 90%;
+    width: 100%;
     height: 90%;
+    margin-top: 10px;
     
-    margin-top: 15px;
-    margin-left: 20px;
+    
+    
+}
+
+.contenedorGrafico h6
+{
+    padding: 10px;
+    text-align: center;
 }

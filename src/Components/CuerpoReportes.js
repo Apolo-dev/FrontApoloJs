@@ -7,22 +7,22 @@ import imgf80 from '../Images/imgf80.png'
 import imgwi from '../Images/imagenwiultima.png'
 import imgpotencia from '../Images/imgpotencia.png'
 import Grafico from './Grafico'
+import CalendarioReportes from './CalendarioReportes'
 
-const CuerpoReportes = ({datosPesos, datosAbertura}) => {
+const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
 
     const p80 = 150
     const f80 = 500
     const wi = 10
     const res = ((10*wi)*((1/Math.sqrt(p80))-(1/Math.sqrt(f80))))
     const potencia = res.toFixed(2)
-    //console.log(potencia);
 
-    console.log(datosPesos);
 
-    console.log(datosAbertura);
 
-    //const resul = datosPesos[0].peso1 + datosAbertura[0].abertura1
-    //console.log(resul);
+
+    //console.log(fechita);
+
+    
 
 
     return (
@@ -34,8 +34,15 @@ const CuerpoReportes = ({datosPesos, datosAbertura}) => {
                     </button>
                 </div>
                 <div className="calendario">
-                    <label htmlFor="">Filtra por fecha: </label>
-                    <input type="date" />
+                    <div className="as">
+                        <label htmlFor="">Filtrar por Fecha: </label>
+                    </div>
+                    <div>
+                        <CalendarioReportes
+                        fecha = {fecha}
+                        setFecha={setFecha}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="gridCajasReportes">

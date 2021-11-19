@@ -4,10 +4,21 @@
     display: grid;
     grid-template-columns: 13% 87%;
     grid-template-rows: 60px 690px;
+    
+    
 }
 
 .gridTablaRespuesta
 {
     display: grid;
     grid-template-columns: 75% 25%;
+
+}
+
+.generalCuerpoRepors
+{
+    max-width: 1150px;
+    margin: auto;
+    margin-top: 15px;
+    
 }

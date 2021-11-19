@@ -5,6 +5,7 @@ import Sidebar from '../Components/Sidebar'
 import Logo from './../Images/logito.png'
 import TablaGiratorio from '../Components/TablaGiratorio'
 import TablaRespuestaLab from '../Components/TablaRespuestaLab'
+import getUnixTime from 'date-fns/getUnixTime'
 
 const ApiUrl = 'http://127.0.0.1:8000/api/pesos/'
 
@@ -21,11 +22,16 @@ const PaginaLab = () => {
     const [peso, setPeso] = useState(initialState)
     const [sumatoria, setSumatoria] = useState('')
     //const [retenido, setRetenido] = useState('')
+    //const [fecha , setFecha ] = useState(new Date())
+
+    const fecha = new Date()
 
 
     const suma = peso.v1 + peso.v2 + peso.v3 + peso.v4 + peso.v5 + peso.v6 + peso.v7 + peso.v8 + peso.v9 + peso.v10 + peso.v11 + peso.v12 + peso.v13 + peso.v14 + peso.v15 + peso.v16 + peso.v17
 
-    console.log(typeof(peso.v1));
+    console.log(getUnixTime(fecha));
+
+    
 
     const savePesos = async ()=>
     {
@@ -54,7 +60,9 @@ const PaginaLab = () => {
                         peso14: peso.v14,
                         peso15: peso.v15,
                         peso16: peso.v16,
-                        peso17: peso.v17
+                        peso17: peso.v17,
+                        
+
                     })
             })
     }
