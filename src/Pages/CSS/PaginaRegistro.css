@@ -1,0 +1,18 @@
+
+.grisRegistro
+{
+    
+    display: grid;
+    grid-template-rows: 70px 590px;
+}
+
+
+
+
+.GridRegistroCuerpo
+{
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 23% 25% 26% 23%;
+    gap: 10px;
+}

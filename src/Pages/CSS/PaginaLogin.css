@@ -1,0 +1,12 @@
+
+.gridLoginGeneral
+{
+    display: grid;
+    grid-template-rows: 100px 400px;
+}
+
+.gridLogin
+{
+    display: grid;
+    grid-template-columns:37% 27% 36%;
+}

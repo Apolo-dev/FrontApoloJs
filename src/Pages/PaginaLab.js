@@ -61,7 +61,7 @@ const PaginaLab = () => {
                         peso15: peso.v15,
                         peso16: peso.v16,
                         peso17: peso.v17,
-                        
+                        fechaActual: new Date()
 
                     })
             })

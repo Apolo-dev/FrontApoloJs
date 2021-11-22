@@ -1,9 +1,22 @@
 import React from 'react'
+import FormLogin from '../Components/FormLogin'
+import './CSS/PaginaLogin.css'
+
 
 const PaginaLogin = () => {
     return (
-        <div>
-            este es el puto mejor login de la vida
+        
+        <div className="gridLoginGeneral">
+            <div>
+                
+            </div>
+            <div className="gridLogin">
+                <div></div>
+                <div>
+                    <FormLogin />
+                </div>
+                <div></div>
+            </div>
         </div>
     )
 }

@@ -8,7 +8,9 @@ import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { es } from 'date-fns/locale'
 //import fromUnixTime from 'date-fns/fromUnixTime'
-import getUnixTime from 'date-fns/getUnixTime'
+//import getUnixTime from 'date-fns/getUnixTime'
+
+
 
 
 
@@ -31,7 +33,7 @@ const dias_semana_cortos = ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
 
 const CalendarioReportes = ({fecha, setFecha}) => {
 
-    console.log(getUnixTime(fecha));
+
 
 
     return (

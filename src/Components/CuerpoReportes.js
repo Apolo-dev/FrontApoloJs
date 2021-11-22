@@ -8,6 +8,10 @@ import imgwi from '../Images/imagenwiultima.png'
 import imgpotencia from '../Images/imgpotencia.png'
 import Grafico from './Grafico'
 import CalendarioReportes from './CalendarioReportes'
+//import getUnixTime from 'date-fns/getUnixTime'
+
+//import { format } from 'date-fns'
+//import isEqual from 'date-fns/isEqual'
 
 const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
 
@@ -16,11 +20,12 @@ const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
     const wi = 10
     const res = ((10*wi)*((1/Math.sqrt(p80))-(1/Math.sqrt(f80))))
     const potencia = res.toFixed(2)
+  
+    //window.__localeId__ = 'es'
+    
+    //const diaBack = fechaBack.getDate()
 
-
-
-
-    //console.log(fechita);
+    
 
     
 

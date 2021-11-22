@@ -5,7 +5,7 @@ import Sidebar from '../Components/Sidebar'
 import Logo from './../Images/logito.png'
 import CuerpoReportes from '../Components/CuerpoReportes'
 
-const apiPesos = 'http://127.0.0.1:8000/api/pesos/'
+const apiPesos = 'http://127.0.0.1:8000/api/pesos/14/'
 
 
 
