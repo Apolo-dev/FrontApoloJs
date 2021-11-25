@@ -6,11 +6,11 @@ const Sidebar = () => {
     return (
         <div className="listasSidebar">
             <h5 className="tituloGenerald">Apolo Minning</h5>
-            <ul >
+            <div>
                 <li><Link to="/reportes">Reportes</Link></li>
                 <li><Link to="/lab">Laboratorio</Link></li>
-                <li><Link to="/form">formulario</Link></li>
-            </ul>
+                <li><Link to="/form">Formulario</Link></li>
+            </div>
         </div>
     )
 }

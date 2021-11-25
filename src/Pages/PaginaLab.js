@@ -29,7 +29,7 @@ const PaginaLab = () => {
 
     const suma = peso.v1 + peso.v2 + peso.v3 + peso.v4 + peso.v5 + peso.v6 + peso.v7 + peso.v8 + peso.v9 + peso.v10 + peso.v11 + peso.v12 + peso.v13 + peso.v14 + peso.v15 + peso.v16 + peso.v17
 
-    console.log(getUnixTime(fecha));
+    const fechaFinal = getUnixTime(fecha)
 
     
 
@@ -61,7 +61,7 @@ const PaginaLab = () => {
                         peso15: peso.v15,
                         peso16: peso.v16,
                         peso17: peso.v17,
-                        fechaActual: new Date()
+                        fechaActual: fechaFinal
 
                     })
             })

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './Styles/CalendarioReportes.css'
 import logocalendario from './../Images/segundocale.png'
 import DayPickerInput from 'react-day-picker/DayPickerInput';
@@ -7,11 +7,10 @@ import 'react-day-picker/lib/style.css';
 import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { es } from 'date-fns/locale'
+//import useObtenerPesos from '../Hooks/useObtenerPesos';
+
 //import fromUnixTime from 'date-fns/fromUnixTime'
-//import getUnixTime from 'date-fns/getUnixTime'
-
-
-
+import getUnixTime from 'date-fns/getUnixTime'
 
 
 
@@ -31,7 +30,49 @@ const meses = ['Enero',	'Febrero', 'Marzo',	'Abril', 'Mayo', 'Junio', 'Julio', '
 const dias_semana_cortos = ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
 
 
-const CalendarioReportes = ({fecha, setFecha}) => {
+
+
+const CalendarioReportes = () => {
+
+    const [fecha, setFecha] = useState(new Date())
+
+    const [pesos, setPesos] = useState([])
+
+    const fechaFinal = getUnixTime(fecha)
+
+
+    const apiPesos = 'http://127.0.0.1:8000/api/pesos/1637876219/'
+
+    const getPesos = async ()=>
+    {
+        try
+        {
+            const res = await fetch(apiPesos)
+            const data = await res.json()
+            setPesos(data)    
+        }catch(error)
+        {
+            console.log(error);
+        }
+    }
+
+    useEffect(()=>
+    {   
+        console.log(pesos);
+        return getPesos()
+    }, [fecha])
+
+    
+
+    useEffect(()=>
+    {
+        console.log(fechaFinal);
+    }, [fecha])
+
+
+
+    //console.log((fecha));
+    //console.log(pesos);
 
 
 

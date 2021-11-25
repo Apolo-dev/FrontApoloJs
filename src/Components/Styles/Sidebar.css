@@ -14,34 +14,40 @@
     margin-top: 5px;
     margin-bottom: 15px;
     padding: 10px;
+    font-size: 18px;
 }
 
-.listasSidebar ul
+.listasSidebar div
 {
     text-decoration: none;
     margin-top: 10px;
     list-style: none;
-    
 }
 
-.listasSidebar ul li
+.listasSidebar div li
 {
+    width: 100%;
     margin-top: 5px;
-    padding: 10px;
+    padding: 10px 0px;
+    cursor: pointer;
+    
+
+}
+
+.listasSidebar div li:hover
+{
+    background-color: rgb(185, 185, 216);
 }
 
 
-.listasSidebar ul li a
+.listasSidebar div li a
 {
     color: white;
     text-decoration: none;
-    padding: 0px 10px;
+    padding: 10px 70px 10px 50px;
+    margin-left: 0px;
 }
 
-.listasSidebar ul li a:hover
-{
-    color: blue;
-}
 
 
 .tituloGenerald

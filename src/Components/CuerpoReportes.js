@@ -8,27 +8,17 @@ import imgwi from '../Images/imagenwiultima.png'
 import imgpotencia from '../Images/imgpotencia.png'
 import Grafico from './Grafico'
 import CalendarioReportes from './CalendarioReportes'
+//import FiltroTurnos from './FiltroTurnos'
 //import getUnixTime from 'date-fns/getUnixTime'
 
-//import { format } from 'date-fns'
 //import isEqual from 'date-fns/isEqual'
 
-const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
+//import isWithinInterval from 'date-fns/isWithinInterval'
 
-    const p80 = 150
-    const f80 = 500
-    const wi = 10
-    const res = ((10*wi)*((1/Math.sqrt(p80))-(1/Math.sqrt(f80))))
-    const potencia = res.toFixed(2)
-  
-    //window.__localeId__ = 'es'
+
+
+const CuerpoReportes = () => {
     
-    //const diaBack = fechaBack.getDate()
-
-    
-
-    
-
 
     return (
         <div className="gridReportes">
@@ -44,17 +34,17 @@ const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
                     </div>
                     <div>
                         <CalendarioReportes
-                        fecha = {fecha}
-                        setFecha={setFecha}
+                        //fecha = {fecha}
+                        //setFecha={setFecha}
                         />
                     </div>
                 </div>
+                
             </div>
             <div className="gridCajasReportes">
                 <div>
                     <BadgeCaja
                     nombre = 'P80(micras)'
-                    dato = {p80}
                     imagen = {imagenp80}
                     //resultado = {resultado}
                     
@@ -63,14 +53,14 @@ const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
                 <div>
                     <BadgeCaja
                     nombre = 'F80(micras)'
-                    dato = {f80}
+                    
                     imagen = {imgf80}
                     />
                 </div>
                 <div>
                     <BadgeCaja
                     nombre = 'Wi(KWh/t)'
-                    dato = {wi}
+                    
                     imagen = {imgwi}
 
                     />
@@ -78,7 +68,7 @@ const CuerpoReportes = ({fecha, setFecha, datosPesos}) => {
                 <div>
                     <BadgeCaja
                     nombre = 'Potencia'
-                    dato = {potencia}
+                    
                     imagen = {imgpotencia}
                     />
                 </div>

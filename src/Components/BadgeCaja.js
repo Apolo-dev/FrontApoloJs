@@ -9,7 +9,7 @@ const BadgeCaja = ({nombre,dato, imagen}) => {
                     {nombre}
                 </div>
                 <div>
-                    {dato}
+                    23
                 </div>
             </div>
             <div className="ImagenDatosCaja">
