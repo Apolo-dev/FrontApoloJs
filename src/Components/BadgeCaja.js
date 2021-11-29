@@ -1,7 +1,7 @@
 import React from 'react'
 import './Styles/BadgeCaja.css'
 
-const BadgeCaja = ({nombre,dato, imagen}) => {
+const BadgeCaja = ({nombre,dato, imagen, pesos}) => {
     return (
         <div className="GridcajaGeneral">
             <div className="gridDatosCajas">
@@ -9,7 +9,7 @@ const BadgeCaja = ({nombre,dato, imagen}) => {
                     {nombre}
                 </div>
                 <div>
-                    45
+                    {pesos}
                 </div>
             </div>
             <div className="ImagenDatosCaja">

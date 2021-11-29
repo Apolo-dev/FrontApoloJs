@@ -14,14 +14,14 @@
 .gridDatosCajas
 {
     display: grid;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 45% 55%;
 }
 
 .gridDatosCajas div
 {
-    text-align: center;
-    margin-top: 5px;
     
+    text-align: center;
+    margin-top: 8px;   
 }
 
 .ImagenDatosCaja

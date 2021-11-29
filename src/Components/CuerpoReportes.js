@@ -9,13 +9,13 @@ import Grafico from './Grafico'
 import CalendarioReportes from './CalendarioReportes'
 //import FiltroTurnos from './FiltroTurnos'
 import getUnixTime from 'date-fns/getUnixTime'
-
 import endOfDay from 'date-fns/endOfDay'
 
 const CuerpoReportes = () => {
 
     const [fecha, setFecha] = useState(new Date())
     const [pesos, setPesos] = useState([])
+    const [aberturas, setAberturas] = useState([])
 
     const finalDia = endOfDay(fecha)
 
@@ -25,6 +25,7 @@ const CuerpoReportes = () => {
     //console.log(fechaFinal);
 
     const apiPesos = `http://127.0.0.1:8000/api/pesos/${fechaFinal}/`
+    const apiAberturas = `http://127.0.0.1:8000/api/aberturas/${fechaFinal}/`
 
 
     const getPesos = async ()=>
@@ -32,8 +33,11 @@ const CuerpoReportes = () => {
         try
         {
             const res = await fetch(apiPesos)
+            const res2 = await fetch(apiAberturas)
             const data = await res.json()
-            setPesos(data)    
+            const data2 = await res2.json()
+            setPesos(data)  
+            setAberturas(data2)  
         }catch(error)
         {
             console.log(error);
@@ -45,18 +49,82 @@ const CuerpoReportes = () => {
     {   
         return getPesos()
     }, [])
+   
 
     console.log(pesos);
-    console.log(fechaFinal);
+    console.log(aberturas);
+
+    // Calculo el p80
+
+    // #########################1° paso: calcular la sumatoria:
+
+    const arreglo = [pesos.peso1, pesos.peso2, pesos.peso3, pesos.peso4, pesos.peso5, pesos.peso6, pesos.peso7, pesos.peso8, pesos.peso9, pesos.peso10, pesos.peso11, pesos.peso12, pesos.peso13, pesos.peso14, pesos.peso15, pesos.peso16, pesos.peso17]
+
+    const sumatoria = ()=>
+    {
+        let suma = 0
+        for(let i=0; i<arreglo.length; i++)
+        {
+            suma += arreglo[i]
+        }
+        return(suma.toFixed(2))
+    }
+
+
+    // console.log(arreglo);
+    console.log(sumatoria());
+
+    // ############################## 2°paso: Sacar el retenido acumulado:
+
+    const saltar = ()=>
+    {
+        for(let i = 0; i<arreglo.length; i++)
+        {
+            const num1 = 100
+            const num2 = sumatoria()
+            const num3 = arreglo[i]
+
+            const porRetenido = (num3*(num1/num2)).toFixed(2)
+            
+            console.log(porRetenido);
+            return porRetenido
+        }
+    }
+
+    //const retenido = saltar()
+    console.log(saltar());
+
+    // ######################## 3° paso sacar el retenido acumulado:
+
+    const reteAcumulado = ()=>
+    {
+        //let suma = saltar()
+        for(let i = 0; i<arreglo.length; i++)
+        {
+            //const num1 = 100
+            //const num2 = sumatoria()
+            //const num1 = arreglo[i]
+            const num2 = arreglo[i+1] + arreglo[i]
+
+            const porRetenido = num2
+            
+            console.log(porRetenido);
+            return porRetenido
+        }
+    }
+
+    console.log(reteAcumulado());
+    //console.log(retenidoAcumulado);
+
+
+
     
 
     return (
         <div className="gridReportes">
             <div className="gridFiltrosReportes">
                 <div>
-                    <button className="botonDatos" >
-                        Datos
-                    </button>
+                    
                 </div>
                 <div className="calendario">
                     <div className="as">
@@ -75,20 +143,21 @@ const CuerpoReportes = () => {
                 <div>
                     <BadgeCaja
                     nombre = 'P80(micras)'
-                    imagen = {imagenp80}    
+                    imagen = {imagenp80} 
+                    pesos = {pesos.peso1}   
                     />
                 </div>
                 <div>
                     <BadgeCaja
                     nombre = 'F80(micras)'
-                    //pesitos = {pesitos.peso2}
+                    pesos = {pesos.peso2}
                     imagen = {imgf80}
                     />
                 </div>
                 <div>
                     <BadgeCaja
                     nombre = 'Wi(KWh/t)'
-                    //pesitos = {pesitos.peso3}
+                    pesos = {pesos.peso3}
                     imagen = {imgwi}
 
                     />
@@ -96,7 +165,7 @@ const CuerpoReportes = () => {
                 <div>
                     <BadgeCaja
                     nombre = 'Potencia'
-                    //pesitos = {pesitos.peso4}
+                    pesos = {pesos.peso4}
                     imagen = {imgpotencia}
                     />
                 </div>

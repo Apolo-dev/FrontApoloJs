@@ -26,13 +26,29 @@
 
 .listasSidebar div li
 {
-    width: 100%;
-    margin-top: 5px;
-    padding: 10px 0px;
+    display: grid;
+    grid-template-columns: 30% 70%;
     cursor: pointer;
+    
+}
+
+.listasSidebar div li div
+{
+    margin: 5px;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+.listasSidebar div li img
+{
+    width: 80%;
+    height: 80%;
+    
     
 
 }
+
+
 
 .listasSidebar div li:hover
 {
@@ -44,8 +60,7 @@
 {
     color: white;
     text-decoration: none;
-    padding: 10px 70px 10px 50px;
-    margin-left: 0px;
+    padding: 10px 20px 10px 8px;
 }
 
 
