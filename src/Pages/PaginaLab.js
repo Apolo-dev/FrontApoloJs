@@ -7,6 +7,8 @@ import TablaGiratorio from '../Components/TablaGiratorio'
 import TablaRespuestaLab from '../Components/TablaRespuestaLab'
 import getUnixTime from 'date-fns/getUnixTime'
 
+import endOfDay from 'date-fns/endOfDay'
+
 const ApiUrl = 'http://127.0.0.1:8000/api/pesos/'
 
 const PaginaLab = () => {
@@ -29,7 +31,8 @@ const PaginaLab = () => {
 
     const suma = peso.v1 + peso.v2 + peso.v3 + peso.v4 + peso.v5 + peso.v6 + peso.v7 + peso.v8 + peso.v9 + peso.v10 + peso.v11 + peso.v12 + peso.v13 + peso.v14 + peso.v15 + peso.v16 + peso.v17
 
-    const fechaFinal = getUnixTime(fecha)
+    const finalDia = endOfDay(fecha)
+    const fechaFinal = getUnixTime(finalDia)
 
     
 

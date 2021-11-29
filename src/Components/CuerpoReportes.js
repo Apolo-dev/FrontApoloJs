@@ -8,20 +8,23 @@ import imgpotencia from '../Images/imgpotencia.png'
 import Grafico from './Grafico'
 import CalendarioReportes from './CalendarioReportes'
 //import FiltroTurnos from './FiltroTurnos'
-//import getUnixTime from 'date-fns/getUnixTime'
+import getUnixTime from 'date-fns/getUnixTime'
 
-//import isEqual from 'date-fns/isEqual'
-
-//import isWithinInterval from 'date-fns/isWithinInterval'
-import closestIndexTo from 'date-fns/closestIndexTo'
-
+import endOfDay from 'date-fns/endOfDay'
 
 const CuerpoReportes = () => {
 
     const [fecha, setFecha] = useState(new Date())
     const [pesos, setPesos] = useState([])
 
-    const apiPesos = 'http://127.0.0.1:8000/api/pesos/'
+    const finalDia = endOfDay(fecha)
+
+    const fechaFinal = getUnixTime(finalDia)
+
+    //const res = getUnixTime(result)
+    //console.log(fechaFinal);
+
+    const apiPesos = `http://127.0.0.1:8000/api/pesos/${fechaFinal}/`
 
 
     const getPesos = async ()=>
@@ -38,31 +41,13 @@ const CuerpoReportes = () => {
     }
 
 
-    const mapeoFecha = pesos.map((element)=>
-    {
-        return new Date(element.created)
-    })
-
-    const fechaFront = (fecha)
-    const fechaBack = (mapeoFecha)
-    const dateToCompare = fechaFront
-    const datesArray = fechaBack
-    const result = closestIndexTo(dateToCompare, datesArray)
-    //console.log(result);
-
-    // const pesitos = (pesos[result]).map((element)=>
-    // {
-    //     return element
-    // })
-
-    const pesitos = pesos[result]
-    console.log(pesitos);
-
-
     useEffect(()=>
     {   
         return getPesos()
     }, [])
+
+    console.log(pesos);
+    console.log(fechaFinal);
     
 
     return (
@@ -90,9 +75,7 @@ const CuerpoReportes = () => {
                 <div>
                     <BadgeCaja
                     nombre = 'P80(micras)'
-                    imagen = {imagenp80}
-                    pesitos = {pesitos.peso1}
-                    
+                    imagen = {imagenp80}    
                     />
                 </div>
                 <div>
